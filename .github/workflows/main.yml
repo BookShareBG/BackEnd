@@ -30,5 +30,7 @@ jobs:
             echo ${{ secrets.PASSWORD }} | sudo -S git pull origin main
             pip3 install --upgrade pip
             pip3 install -r requirements.txt
+            python3 manage.py makemigrations && python3 manage.py migrate
             python3 manage.py test
-      
+            echo ${{ secrets.PASSWORD }} | su -S - root
+            PID=$(systemctl show --value -p MainPID gunicorn.service) && kill -HUP $PID
