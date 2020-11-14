@@ -26,7 +26,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            cd /home/django/bookshare/ && git pull origin main
+            cd /home/django/bookshare/
+            echo ${{ secrets.PASSWORD }} | sudo git pull origin main
             python -m pip install --upgrade pip
             pip install -r requirements.txt
             python manage.py test
