@@ -25,7 +25,7 @@ SECRET_KEY = 'dq=u0^y&sk-d-99+!rn*9w_d2fcz^uap6#rfvuu(r5y^o)_y4_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['back-end-fjxqr.ondigitalocean.app']
+ALLOWED_HOSTS = ['bookshare.bg']
 
 
 # Application definition
