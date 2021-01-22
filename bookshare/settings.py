@@ -25,7 +25,7 @@ SECRET_KEY = 'dq=u0^y&sk-d-99+!rn*9w_d2fcz^uap6#rfvuu(r5y^o)_y4_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bookshare.bg']
+ALLOWED_HOSTS = ['bookshare.bg', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +77,12 @@ WSGI_APPLICATION = 'bookshare.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bookshare-db',
+        'USER': 'bookshare-db',
+        'PASSWORD': 'nos8tx7l35vfu7r9',
+        'HOST': 'app-8664dde2-b544-450e-9e89-8762d031c6c8-do-user-8214094-0.b.db.ondigitalocean.com',
+        'PORT': '25060',
     }
 }
 
